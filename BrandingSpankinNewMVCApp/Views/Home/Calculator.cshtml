@@ -1,0 +1,35 @@
+﻿@model BrandingSpankinNewMVCApp.Models.HomeControllerModel
+
+
+<h2>Calculator</h2>
+<h3>Fill out this brief form and I'll get back to you!</h3>
+<form asp-action="CalculateTotal" asp-controller="Home" method="post">
+    <div>
+        <!-- Label and input for the number of hours needed -->
+        <label>How many hours do you need from me?</label> <br />
+        <input asp-for="Hours" id="Hours" type="number" min="0" required />
+        <span asp-validation-for="Hours" class="text-danger"></span>
+    </div>
+    <div>
+        <!-- Label and input for the hourly charge -->
+        <label>How much I charge per hour:</label> <br />
+        <input asp-for="HourlyCharge" id="HourlyCharge" type="number" readonly />
+    </div>
+    <div>
+        <!-- Button to trigger the calculation -->
+        <button type="button" id="calculate">Calculate Total</button>
+    </div>
+</form>
+<div>
+    <!-- Display the total cost -->
+    <label>Total Cost: </label> <br />
+    <span id="TotalCost"></span>
+</div>
+
+<!-- Include jQuery and the calculator JavaScript file -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="calculator.js" defer></script>
+
+
+
+
